@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastic Waste Awareness</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EarthCare</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#initiatives">Initiatives</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#donate" class="donate-btn">Give</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>End Plastic Pollution</h1>
+            <p>Join us in the fight to reduce plastic waste and protect our planet.</p>
+            <a href="#donate" class="cta-btn">Take Action</a>
+        </div>
+    </section>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: navy;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .donate-btn {
+            background: yellow;
+            padding: 5px 15px;
+            border-radius: 5px;
+            color: black;
+        }
+        .hero {
+            background: url('plastic-waste.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: yellow;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const donateBtn = document.querySelector(".cta-btn");
+            donateBtn.addEventListener("click", function() {
+                alert("Thank you for supporting the cause!");
+            });
+        });
+    </script>
+</body>
+</html>
