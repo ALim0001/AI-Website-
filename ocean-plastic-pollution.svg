@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Ocean background -->
+  <defs>
+    <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E90FF" />
+      <stop offset="100%" stop-color="#000080" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#oceanGradient)" />
+  
+  <!-- Sun rays from top -->
+  <path d="M0,0 L800,0 L800,150 C750,130 700,140 650,130 C600,120 550,140 500,130 C450,120 400,140 350,130 C300,120 250,140 200,130 C150,120 100,140 50,130 C0,120 0,130 0,150 Z" fill="#1E90FF" opacity="0.3" />
+  
+  <!-- Ocean surface with waves -->
+  <path d="M0,150 C50,130 100,150 150,140 C200,130 250,150 300,140 C350,130 400,150 450,140 C500,130 550,150 600,140 C650,130 700,150 750,140 C800,130 800,150 800,150 L800,600 L0,600 Z" fill="url(#oceanGradient)" />
+  
+  <!-- Plastic bottle 1 -->
+  <path d="M100,200 L110,190 L130,190 L140,200 L140,250 C140,260 130,270 120,270 L120,270 C110,270 100,260 100,250 Z" fill="#FFFFFF" opacity="0.8" />
+  <path d="M110,190 L130,190 L130,180 L110,180 Z" fill="#FFFFFF" opacity="0.8" />
+  
+  <!-- Plastic bottle 2 -->
+  <path d="M600,320 L610,310 L630,310 L640,320 L640,370 C640,380 630,390 620,390 L620,390 C610,390 600,380 600,370 Z" fill="#FFFFFF" opacity="0.8" />
+  <path d="M610,310 L630,310 L630,300 L610,300 Z" fill="#FFFFFF" opacity="0.8" />
+  <path d="M600,320 L640,320 L640,330 L600,330 Z" fill="#87CEEB" opacity="0.4" />
+  
+  <!-- Plastic bag -->
+  <path d="M380,220 C390,210 410,210 420,220 C430,230 430,250 430,260 C430,270 420,280 410,290 C400,300 390,300 380,290 C370,280 360,270 360,260 C360,250 370,230 380,220 Z" fill="#FFFFFF" opacity="0.5" />
+  
+  <!-- Plastic straw -->
+  <rect x="520" y="220" width="60" height="5" rx="2" ry="2" fill="#FF69B4" opacity="0.9" transform="rotate(30, 520, 220)" />
+  
+  <!-- Plastic cup -->
+  <path d="M200,350 L220,350 L230,430 L190,430 Z" fill="#FFFFFF" opacity="0.7" />
+  
+  <!-- Plastic rings -->
+  <circle cx="450" cy="350" r="30" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.7" />
+  <circle cx="480" cy="370" r="20" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.7" />
+  <circle cx="430" cy="380" r="25" stroke="#FFFFFF" stroke-width="3" fill="none" opacity="0.7" />
+  
+  <!-- Fish 1 entangled in plastic -->
+  <path d="M300,400 C320,390 330,400 350,400 C370,400 380,390 380,380 C380,370 370,360 350,360 C330,360 320,370 300,360 C280,350 290,390 300,400 Z" fill="#FFA500" />
+  <path d="M380,380 L400,390 L400,370 Z" fill="#FFA500" />
+  <circle cx="320" cy="380" r="5" fill="#000000" />
+  <path d="M300,400 C320,390 330,400 350,400" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.8" />
+  
+  <!-- Fish 2 -->
+  <path d="M650,450 C670,440 680,450 700,450 C720,450 730,440 730,430 C730,420 720,410 700,410 C680,410 670,420 650,410 C630,400 640,440 650,450 Z" fill="#6495ED" />
+  <path d="M730,430 L750,440 L750,420 Z" fill="#6495ED" />
+  <circle cx="670" cy="430" r="5" fill="#000000" />
+  
+  <!-- Coral formation -->
+  <path d="M50,500 C60,480 80,490 90,470 C100,450 110,460 120,440 C130,420 140,430 150,410 C160,390 170,400 180,380 C190,360 200,370 210,350 C220,330 230,340 240,320 C250,300 250,500 250,500 Z" fill="#FF7F50" />
+  <path d="M100,500 C110,480 120,490 130,470 C140,450 150,460 160,440 C170,420 180,430 190,410 C200,390 210,400 220,380 C230,360 240,370 250,350 C260,330 270,340 280,320 C290,300 290,500 290,500 Z" fill="#FF6347" />
+  
+  <!-- Seaweed -->
+  <path d="M500,500 C510,480 490,460 500,440 C510,420 490,400 500,380 C510,360 490,340 500,320 C510,300 490,280 500,260 L500,500 Z" fill="#008000" opacity="0.7" />
+  <path d="M520,500 C530,480 510,460 520,440 C530,420 510,400 520,380 C530,360 510,340 520,320 C530,300 510,280 520,260 L520,500 Z" fill="#008000" opacity="0.7" />
+  <path d="M540,500 C550,480 530,460 540,440 C550,420 530,400 540,380 C550,360 530,340 540,320 C550,300 530,280 540,260 L540,500 Z" fill="#008000" opacity="0.7" />
+  
+  <!-- More plastic debris -->
+  <rect x="700" y="480" width="40" height="20" rx="5" ry="5" fill="#F0F8FF" opacity="0.6" />
+  <rect x="350" y="480" width="30" height="30" rx="5" ry="5" fill="#F0F8FF" opacity="0.6" />
+  <rect x="600" y="500" width="50" height="10" rx="5" ry="5" fill="#F0F8FF" opacity="0.6" />
+  
+  <!-- Microplastics (small dots) -->
+  <circle cx="150" cy="250" r="3" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="180" cy="280" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="220" cy="220" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="260" cy="300" r="3" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="400" cy="220" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="450" cy="270" r="3" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="550" cy="300" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="650" cy="250" r="3" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="700" cy="280" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="360" cy="340" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="420" cy="380" r="3" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="480" cy="320" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="540" cy="360" r="2" fill="#FFFFFF" opacity="0.7" />
+  <circle cx="620" cy="340" r="3" fill="#FFFFFF" opacity="0.7" />
+  
+  <!-- Light rays -->
+  <path d="M200,0 L220,150 L180,150 Z" fill="#FFFFFF" opacity="0.1" />
+  <path d="M600,0 L620,150 L580,150 Z" fill="#FFFFFF" opacity="0.1" />
+  <path d="M400,0 L420,150 L380,150 Z" fill="#FFFFFF" opacity="0.1" />
+  
+  <!-- Ocean floor -->
+  <path d="M0,500 C50,510 100,490 150,510 C200,530 250,510 300,520 C350,530 400,510 450,520 C500,530 550,510 600,520 C650,530 700,510 750,520 C800,530 800,600 800,600 L0,600 Z" fill="#D2B48C" />
+</svg>
