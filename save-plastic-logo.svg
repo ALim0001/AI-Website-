@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <!-- Background rectangle -->
+  <rect width="400" height="250" fill="#F5F5F5" rx="10" ry="10"/>
+  
+  <!-- Water wave background -->
+  <path d="M0,180 C50,160 100,200 150,180 C200,160 250,200 300,180 C350,160 400,200 400,180 L400,250 L0,250 Z" fill="#4682B4" opacity="0.3"/>
+  
+  <!-- Plastic bottle silhouette -->
+  <path d="M170,50 L175,40 L225,40 L230,50 L230,70 C240,80 240,85 240,90 L240,190 C240,200 230,210 220,210 L180,210 C170,210 160,200 160,190 L160,90 C160,85 160,80 170,70 Z" fill="#A9A9A9"/>
+  
+  <!-- Water drop inside bottle -->
+  <path d="M180,80 C180,80 200,60 220,80 C240,100 220,160 200,170 C180,160 160,100 180,80 Z" fill="#4682B4"/>
+  
+  <!-- Bottle neck inner space -->
+  <path d="M180,50 L180,70 L220,70 L220,50 Z" fill="#F5F5F5"/>
+  
+  <!-- Text "SAVE" -->
+  <text x="110" y="230" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#4682B4">SAVE</text>
+  
+  <!-- Text "PLASTIC" -->
+  <text x="210" y="230" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#A9A9A9">PLASTIC</text>
+  
+  <!-- Recycling symbol -->
+  <g transform="translate(200, 130) scale(0.4)">
+    <!-- Arrow 1 -->
+    <path d="M0,-30 L-10,-15 L-3,-15 L-3,10 L-23,10 L-15,0 L-35,-10 L-23,-20 L-15,-10 L-23,-10 L-3,-10 L-3,-15 L3,-15 Z" fill="#4682B4"/>
+    <!-- Arrow 2 -->
+    <path d="M0,30 L10,15 L3,15 L3,-10 L23,-10 L15,0 L35,10 L23,20 L15,10 L23,10 L3,10 L3,15 L-3,15 Z" fill="#4682B4"/>
+    <!-- Arrow 3 -->
+    <path d="M-20,-15 L-30,15 L-23,15 L-13,-5 L3,23 L-10,23 L0,38 L10,23 L0,23 L-13,-5 L-23,15 L-23,15 L-17,15 Z" fill="#4682B4"/>
+  </g>
+</svg>
