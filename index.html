@@ -1,103 +1,692 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plastic Waste Awareness</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>End Plastics - Plastic Waste Awareness</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+      line-height: 1.6;
+      color: #333;
+    }
+    
+    /* Header styles */
+    header {
+      background-color: #0a1045;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    .join-us {
+      display: flex;
+      align-items: center;
+      color: #ffc107;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .join-us span {
+      margin-right: 10px;
+    }
+    
+    .nav-tools {
+      display: flex;
+      align-items: center;
+    }
+    
+    .search-icon, .contrast-toggle {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    
+    .contrast-toggle {
+      background: none;
+      border: none;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+      margin-left: 10px;
+    }
+    
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 24px;
+      transition: .4s;
+    }
+    
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: .4s;
+    }
+    
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+    
+    /* Navigation styles */
+    .main-nav {
+      background-color: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .main-nav .logo img {
+      height: 50px;
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin: 0 15px;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: #0a1045;
+    }
+    
+    .cta-button {
+      background-color: #ffc107;
+      color: #0a1045;
+      padding: 10px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: #e0a800;
+    }
+    
+    /* Hero section styles */
+    .hero {
+      position: relative;
+      height: 70vh;
+      background-image: url('/api/placeholder/1900/1000');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 5%;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+    
+    .hero-subtitle {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-title {
+      font-size: 52px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      line-height: 1.2;
+    }
+    
+    /* Main content styles */
+    .main-content {
+      padding: 60px 5%;
+    }
+    
+    .stats-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+    
+    .stat-card {
+      background-color: #f5f5f5;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      flex-basis: 30%;
+      margin-bottom: 20px;
+    }
+    
+    .stat-number {
+      font-size: 42px;
+      font-weight: bold;
+      color: #0a1045;
+      margin-bottom: 10px;
+    }
+    
+    .stat-text {
+      font-size: 18px;
+    }
+    
+    .info-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    
+    .info-text {
+      flex-basis: 48%;
+    }
+    
+    .info-text h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #0a1045;
+    }
+    
+    .info-text p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    
+    .info-image {
+      flex-basis: 48%;
+    }
+    
+    .info-image img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    
+    /* Action section styles */
+    .action-section {
+      background-color: #0a1045;
+      color: white;
+      padding: 60px 5%;
+      text-align: center;
+    }
+    
+    .action-section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .action-section p {
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .action-button {
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    
+    .primary-button {
+      background-color: #ffc107;
+      color: #0a1045;
+    }
+    
+    .primary-button:hover {
+      background-color: #e0a800;
+    }
+    
+    .secondary-button {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    
+    .secondary-button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: #0a1045;
+      color: white;
+      padding: 40px 5% 20px;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column {
+      flex-basis: 23%;
+      margin-bottom: 20px;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column ul li a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column ul li a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .stat-card {
+        flex-basis: 100%;
+      }
+      
+      .info-section {
+        flex-direction: column;
+      }
+      
+      .info-text, .info-image {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+      }
+      
+      .footer-column {
+        flex-basis: 48%;
+      }
+      
+      .hero-title {
+        font-size: 36px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .footer-column {
+        flex-basis: 100%;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+      }
+      
+      .hero-subtitle {
+        font-size: 18px;
+      }
+      
+      .hero-title {
+        font-size: 28px;
+      }
+    }
+    
+    /* Language selector styles */
+    .language-selector {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      background-color: white;
+      padding: 8px 15px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    .language-selector img {
+      height: 20px;
+      margin-right: 10px;
+    }
+    
+    .language-selector select {
+      border: none;
+      background: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Care about the Earth</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#initiatives">Initiatives</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#donate" class="donate-btn">Give</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>End Plastic Pollution</h1>
-            <p>Join us in the fight to reduce plastic waste and protect our planet.</p>
-            <a href="#donate" class="cta-btn">Take Action</a>
-        </div>
+  <!-- Top Header -->
+  <header>
+    <a href="#" class="join-us">
+      <span>JOIN US</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    </a>
+    <div class="nav-tools">
+      <div class="search-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </div>
+      <div class="contrast-toggle">
+        <span>Contrast</span>
+        <label class="toggle-switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Main Navigation -->
+  <nav class="main-nav">
+    <div class="logo">
+      <img src="/api/placeholder/100/50" alt="EarthDay.org Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Earth Day 2025</a></li>
+      <li><a href="#">Earth Hub</a></li>
+      <li><a href="#">Initiatives</a></li>
+      <li><a href="#">Stories & Events</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="contact us.html">Contact US</a></li>
+    </ul>
+    <a href="#" class="cta-button">GIVE</a>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2 class="hero-subtitle">END PLASTICS</h2>
+      <h1 class="hero-title">END PLASTICS</h1>
+    </div>
+    <div class="language-selector">
+      <img src="/api/placeholder/30/20" alt="English Flag">
+      <select>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+      </select>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">8.3B</div>
+        <div class="stat-text">Metric tons of plastic produced since 1950</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">91%</div>
+        <div class="stat-text">Of plastic waste is not recycled</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">500+</div>
+        <div class="stat-text">Years for plastic to decompose</div>
+      </div>
     </section>
     
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: navy;
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            gap: 20px;
-            
-        }
-        .nav-links li {
-            margin: 0 10px;
-          
-        }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-        }
-        .donate-btn {
-            background: green;
-            padding: 5px 15px;
-            border-radius: 5px;
-            color: black;
-        }
-        .hero {
-            background: url('plastic-waste.jpg') center/cover no-repeat;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: gray;
-            padding: 20px;
-        }
-        .cta-btn {
-            display: inline-block;
-            background: green;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    <!-- Info Section -->
+    <section class="info-section">
+      <div class="info-text">
+        <h2>The Plastic Crisis</h2>
+        <p>Plastic pollution has become one of the most pressing environmental issues, as rapidly increasing production of disposable plastic products overwhelms the world's ability to deal with them.</p>
+        <p>Plastic pollution is most visible in developing countries in Asia and Africa, where garbage collection systems are often inefficient or nonexistent. But the developed world, especially in countries with low recycling rates, also has trouble properly collecting discarded plastics.</p>
+        <p>Plastics made from fossil fuels are just over a century old. Production and development of thousands of new plastic products accelerated after World War II, so transforming the modern age that life without plastics would be unrecognizable today.</p>
+      </div>
+      <div class="info-image">
+        <img src="/api/placeholder/600/400" alt="Plastic pollution in oceans">
+      </div>
+    </section>
     
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const donateBtn = document.querySelector(".cta-btn");
-            donateBtn.addEventListener("click", function() {
-                alert("Thank you for supporting the cause!");
-            });
-        });
-    </script>
+    <!-- Reversed Info Section -->
+    <section class="info-section">
+      <div class="info-image">
+        <img src="/api/placeholder/600/400" alt="Plastic-free alternatives">
+      </div>
+      <div class="info-text">
+        <h2>Solutions to Plastic Pollution</h2>
+        <p>Solving the plastic crisis requires a multi-faceted approach that includes reducing consumption, improving waste management, developing alternatives, and implementing policy changes.</p>
+        <p>Individuals can make a difference by refusing single-use plastics, choosing reusable alternatives, properly recycling, supporting businesses committed to reducing plastic use, and advocating for policy change.</p>
+        <p>Companies and governments must work together to implement extended producer responsibility, fund research into alternatives, improve recycling infrastructure, and create incentives for sustainable practices.</p>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Action Section -->
+  <section class="action-section">
+    <h2>Take Action Today</h2>
+    <p>Join the global movement to end plastic pollution. Together, we can create a cleaner, healthier planet for current and future generations.</p>
+    <div class="action-buttons">
+      <a href="#" class="action-button primary-button">SIGN THE PETITION</a>
+      <a href="#" class="action-button secondary-button">DONATE NOW</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Get Involved</h3>
+        <ul>
+          <li><a href="#">Take Action</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Sign Petitions</a></li>
+          <li><a href="#">Fundraise</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Plastic Facts</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Educational Materials</a></li>
+          <li><a href="#">News & Updates</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="Youtube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+        <p>Sign up for our newsletter to stay updated on our initiatives and how you can help.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 End Plastics Initiative. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle functionality for contrast mode
+    const contrastToggle = document.querySelector('.toggle-switch input');
+    contrastToggle.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.classList.add('high-contrast');
+      } else {
+        document.body.classList.remove('high-contrast');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Mobile navigation toggle (would be implemented for responsive design)
+    function toggleMobileNav() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('show');
+    }
+    
+    // Animation for stats when they come into view
+    const statCards = document.querySelectorAll('.stat-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    statCards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
